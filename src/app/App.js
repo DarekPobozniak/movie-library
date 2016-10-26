@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
-import MovieList from '../movie/MovieList';
 
-const App = () => (
+const App = ({ children }) => (
   <div>
     <Header />
-    <MovieList />
+    {children}
     <Footer />
   </div>
 );
+
+App.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default App;
