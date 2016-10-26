@@ -1,7 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import SearchForm from '../searchForm/SearchForm';
 import { fetchMovies } from './actions';
+import SearchForm from '../searchForm/SearchForm';
+import MovieItem from './MovieListItem';
+
+import './_styles.scss';
 
 class MovieList extends Component {
   static propTypes = {
@@ -33,11 +36,17 @@ class MovieList extends Component {
         }
 
         {!isFetching && movies.length > 0 &&
-          <ul>
+          <div className="movie-list">
             {movies.map((movie, index) =>
-              <li key={index}>{movie.original_title}</li>
+              <MovieItem
+                key={index}
+                title={movie.original_title}
+                overview={movie.overview}
+                voteAverage={movie.vote_average}
+                poster={movie.poster_path}
+              />
             )}
-          </ul>
+          </div>
         }
       </div>
     );
