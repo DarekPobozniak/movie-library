@@ -1,0 +1,40 @@
+{
+  "name": "MovieDB",
+  "version": "1.0.0",
+  "description": "Movie DB search UI",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo '=> building' && NODE_ENV=production ./node_modules/.bin/webpack --progress",
+    "open": "open index.html",
+    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --port=8765",
+    "serve": "npm run build & npm run open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "moviedb"
+  ],
+  "author": "Dariusz Pobożniak",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.0",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
