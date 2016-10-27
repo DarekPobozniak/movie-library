@@ -1,11 +1,7 @@
 @import '../styles/normalize';
 
 html {
-  font: 15px -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
-}
-
-body {
-  padding: 0 1em;
+  font: 15px/1.2 -apple-system, '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI', 'Helvetica Neue', 'Lucida Grande', sans-serif;
 }
 
 a {
@@ -20,4 +16,20 @@ a {
   display: inline-block;
   padding: .4em .5em;
   text-transform: uppercase;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 1300px;
 }

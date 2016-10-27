@@ -1,8 +1,12 @@
 import React from 'react';
 
+import './_styles.scss';
+
 const Header = () => (
   <header className="page-header">
-    <h1>Movie Library</h1>
+    <div className="wrapper">
+      <h1 className="page-title">Movie Library</h1>
+    </div>
   </header>
 );
 

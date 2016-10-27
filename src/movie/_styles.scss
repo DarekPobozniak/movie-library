@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 
   &__item {
-    border: 1px solid #aaa;
+    border: 1px solid #acbac9;
     border-width: 0 0 1px;
     display: flex;
     flex-direction: column;
@@ -40,10 +40,26 @@
 }
 
 @media only screen and (min-width: 735px) {
+  .movie-list {
+    justify-content: space-between;
+
+    &__item {
+      border-width: 1px;
+      box-sizing: border-box;
+      flex-direction: row;
+      height: 278px;
+    }
+  }
+}
+
+@media only screen and (min-width: 850px) {
   .movie-list__item {
-    border-width: 1px;
-    flex: 1 390px;
-    flex-direction: row;
-    height: 278px;
+    width: calc(50% - .5em);
+  }
+}
+
+@media only screen and (min-width: 1180px) {
+  .movie-list__item {
+    width: calc(100% / 3 - .75em);
   }
 }

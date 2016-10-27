@@ -5,9 +5,11 @@ import Footer from '../footer/Footer';
 import './_styles.scss';
 
 const App = ({ children }) => (
-  <div>
+  <div className="page-wrapper">
     <Header />
-    {children}
+    <main className="page-content">
+      {children}
+    </main>
     <Footer />
   </div>
 );

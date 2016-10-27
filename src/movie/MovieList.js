@@ -22,7 +22,7 @@ class MovieList extends Component {
     const { isFetching, movies } = this.props;
 
     return (
-      <div>
+      <div className="wrapper">
         <SearchForm
           onSubmit={this.handleSearchFormSubmit}
         />
