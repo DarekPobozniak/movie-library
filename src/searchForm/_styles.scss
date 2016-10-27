@@ -1,0 +1,32 @@
+.search-form {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+
+  &__label {
+    align-self: flex-start;
+    flex: 1 0 110px;
+    margin-top: 1.1em;
+    max-width: 140px;
+  }
+
+  &__input {
+    border: 1px solid #aaa;
+    flex: 1 0 220px;
+    margin-top: .4em;
+    padding: .8em;
+
+    &-wrapper {
+      display: flex;
+      flex: 1 0 220px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__button {
+    margin-top: .4em;
+    padding-bottom: .7em;
+    padding-top: .7em;
+  }
+}

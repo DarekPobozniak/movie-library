@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import './_styles.scss';
+
 class SearchForm extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
@@ -21,16 +23,20 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <form className="form-search" onSubmit={this.handleSubmit}>
-        <label htmlFor="search-input">Search movie</label>
-        <input
-          type="search"
-          id="search-input"
-          onChange={this.handleValueChange}
-          value={this.state.inputValue}
-          required
-        />
-        <button type="submit">Search</button>
+      <form className="search-form" onSubmit={this.handleSubmit}>
+        <label htmlFor="search-input"className="search-form__label">Search movie</label>
+        <span className="search-form__input-wrapper">
+          <input
+            type="search"
+            className="search-form__input"
+            id="search-input"
+            onChange={this.handleValueChange}
+            value={this.state.inputValue}
+            placeholder="movie title, keyword..."
+            required
+          />
+          <button type="submit" className="button search-form__button">Search</button>
+        </span>
       </form>
     );
   }
