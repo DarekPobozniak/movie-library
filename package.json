@@ -1,5 +1,5 @@
 {
-  "name": "MovieDB",
+  "name": "MovieLibrary",
   "version": "1.0.0",
   "description": "Movie DB search UI",
   "main": "index.js",
@@ -8,6 +8,7 @@
     "open": "open index.html",
     "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --port=8765",
     "serve": "npm run build & npm run open",
+    "lint": "npm run lint:js",
     "lint:js": "echo '=> linting js' && eslint src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
