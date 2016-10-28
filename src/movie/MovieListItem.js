@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
-const MovieItem = ({
-  title, voteAverage, overview, poster,
+const MovieListItem = ({
+  id, title, voteAverage, overview, poster,
 }) => {
   const imagePath = poster ? `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${poster}` : null;
   return (
     <article className="movie-list__item">
       <div className="movie-list__item__content">
         <header className="movie-list__item__header">
-          <h3 className="movie-list__item__title">{title}</h3>
+          <h3 className="movie-list__item__title">
+            <Link to={`/movies/edit/${id}`}>{title}</Link>
+          </h3>
           <span className="movie-list__item__vote">{voteAverage} &#9733;</span>
         </header>
         <p className="movie-list__item__description">{overview}</p>
         <footer className="movie-list__item__footer">
-          <a href="#" className="button">More</a>
+          <Link className="button" to={`/movies/edit/${id}`}>More</Link>
         </footer>
       </div>
       {imagePath &&
-        <img src={imagePath} className="movie-list__item__image" alt="" width="185" height="278" />
+        <Link to={`/movies/edit/${id}`}>
+          <img src={imagePath} className="movie-list__item__image" alt="" width="185" height="278" />
+        </Link>
       }
     </article>
   );
 };
 
-export default MovieItem;
+MovieListItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  voteAverage: PropTypes.number.isRequired,
+  overview: PropTypes.string.isRequired,
+  poster: PropTypes.string,
+};
+
+export default MovieListItem;

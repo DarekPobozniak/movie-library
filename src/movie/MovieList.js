@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from './actions';
 import SearchForm from '../searchForm/SearchForm';
-import MovieItem from './MovieListItem';
+import MovieListItem from './MovieListItem';
 
 import './_styles.scss';
 
@@ -38,8 +38,9 @@ class MovieList extends Component {
         {!isFetching && movies.length > 0 &&
           <div className="movie-list">
             {movies.map((movie, index) =>
-              <MovieItem
+              <MovieListItem
                 key={index}
+                id={movie.id}
                 title={movie.original_title}
                 overview={movie.overview}
                 voteAverage={movie.vote_average}
