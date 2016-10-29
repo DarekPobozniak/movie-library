@@ -24,8 +24,8 @@ function receiveMovies(items) {
   };
 }
 
-export function fetchMovies(query = '') {
-  let url = 'https://api.themoviedb.org/3/search/movie?api_key=7865ca4c4fd2d00ff34dc331b1ca13b6&language=en-US';
+export function fetchMovies(query = '', page = 1) {
+  let url = `https://api.themoviedb.org/3/search/movie?api_key=7865ca4c4fd2d00ff34dc331b1ca13b6&language=en-US&page=${page}`;
 
   if (query) {
     url += `&query=${encodeURIComponent(query)}`;

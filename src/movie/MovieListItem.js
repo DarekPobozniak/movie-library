@@ -10,17 +10,17 @@ const MovieListItem = ({
       <div className="movie-list__item__content">
         <header className="movie-list__item__header">
           <h3 className="movie-list__item__title">
-            <Link to={`/movies/edit/${id}`}>{title}</Link>
+            <Link to={`/movie/${id}`}>{title}</Link>
           </h3>
           <span className="movie-list__item__vote">{voteAverage} &#9733;</span>
         </header>
         <p className="movie-list__item__description">{overview}</p>
         <footer className="movie-list__item__footer">
-          <Link className="button" to={`/movies/edit/${id}`}>More</Link>
+          <Link className="button" to={`/movie/${id}`}>More</Link>
         </footer>
       </div>
       {imagePath &&
-        <Link to={`/movies/edit/${id}`}>
+        <Link to={`/movie/${id}`}>
           <img src={imagePath} className="movie-list__item__image" alt="" width="185" height="278" />
         </Link>
       }

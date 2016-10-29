@@ -1,0 +1,17 @@
+.pagination {
+  text-align: center;
+
+  &__item {
+    border: 0 none;
+    background: #95a5a6;
+    color: #fff;
+    padding: 0.5em 0;
+    margin: .1em;
+    width: 2em;
+    text-align: center;
+
+    &:disabled {
+      background: #34495e;
+    }
+  }
+}

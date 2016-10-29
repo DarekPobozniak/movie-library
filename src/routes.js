@@ -8,6 +8,8 @@ import Movie from './movie/Movie';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={MovieList} />
-    <Route path="movies/edit/:id" component={Movie} />
+    <Route path="movies(/:query)" component={MovieList} />
+    <Route path="movies(/:query)(/:page)" component={MovieList} />
+    <Route path="movie/:id" component={Movie} />
   </Route>
 );
