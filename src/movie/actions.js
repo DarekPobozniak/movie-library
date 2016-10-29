@@ -1,4 +1,5 @@
 import { Fetch } from '../helpers';
+import config from '../config';
 
 /*
  * Action types
@@ -25,7 +26,7 @@ function receiveMovies(items) {
 }
 
 export function fetchMovies(query = '', page = 1) {
-  let url = `https://api.themoviedb.org/3/search/movie?api_key=7865ca4c4fd2d00ff34dc331b1ca13b6&language=en-US&page=${page}`;
+  let url = `${config.baseUrl}/search/movie?api_key=${config.apiKey}&language=${config.language}&page=${page}`;
 
   if (query) {
     url += `&query=${encodeURIComponent(query)}`;
@@ -59,7 +60,7 @@ function receiveMovie(item) {
 }
 
 export function fetchMovie(movieId = '') {
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=7865ca4c4fd2d00ff34dc331b1ca13b6&language=en-US`;
+  const url = `${config.baseUrl}/movie/${movieId}?api_key=${config.apiKey}&language=${config.language}`;
 
   return (dispatch) => {
     dispatch(requestMovie(movieId));
