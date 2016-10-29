@@ -49,6 +49,7 @@ const mapStateToProps = (state) => {
     runtime,
     status,
     revenue,
+    genres,
   } = state.movies.selected;
 
   const imagePath = poster_path ? `https://image.tmdb.org/t/p/w300_and_h450_bestv2${poster_path}` : null;
@@ -67,6 +68,7 @@ const mapStateToProps = (state) => {
     duration,
     status,
     income,
+    genres,
   };
 };
 

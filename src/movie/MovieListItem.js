@@ -5,6 +5,8 @@ const MovieListItem = ({
   id, title, voteAverage, overview, poster,
 }) => {
   const imagePath = poster ? `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${poster}` : null;
+  const description = overview.length > 100 ? `${overview.slice(0, 130)}...` : overview;
+
   return (
     <article className="movie-list__item">
       <div className="movie-list__item__content">
@@ -14,7 +16,7 @@ const MovieListItem = ({
           </h3>
           <span className="movie-list__item__vote">{voteAverage} &#9733;</span>
         </header>
-        <p className="movie-list__item__description">{overview}</p>
+        <p className="movie-list__item__description">{description}</p>
         <footer className="movie-list__item__footer">
           <Link className="button" to={`/movie/${id}`}>More</Link>
         </footer>
