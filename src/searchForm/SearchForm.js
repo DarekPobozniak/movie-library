@@ -14,7 +14,13 @@ class SearchForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state.inputValue);
+    const value = this.state.inputValue.trim();
+
+    if (!value) {
+      return;
+    }
+
+    this.props.onSubmit(value);
   }
 
   handleValueChange = (event) => {
