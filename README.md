@@ -29,7 +29,7 @@ npm start
 
 Automatically recompiles resources when files change and reloads the page in browser
 
-Once run, open <http://localhost:8765/webpack-dev-server/>
+Once run, open <http://localhost:8765/>
 
 ### Linting
 
