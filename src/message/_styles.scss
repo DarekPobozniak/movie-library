@@ -1,0 +1,12 @@
+.message {
+  font-size: 1.2em;
+  text-align: center;
+
+  &--info {
+    color: #34495e;
+  }
+
+  &--alert {
+    color: #e74c3c;
+  }
+}
