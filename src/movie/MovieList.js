@@ -6,6 +6,7 @@ import { setActivePage } from '../pagination/actions';
 import SearchForm from '../searchForm/SearchForm';
 import MovieListItem from './MovieListItem';
 import Pagination from '../pagination/Pagination';
+import Loader from '../loader/Loader';
 
 import './_styles.scss';
 
@@ -58,7 +59,7 @@ class MovieList extends Component {
         />
 
         {isFetching &&
-          <p>loading...</p>
+          <Loader />
         }
 
         {!isFetching && movies.length === 0 &&

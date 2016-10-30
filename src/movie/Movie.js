@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovie } from './actions';
 import MovieItem from './MovieItem';
+import Loader from '../loader/Loader';
 
 class Movie extends Component {
   static propTypes = {
@@ -26,7 +27,7 @@ class Movie extends Component {
     const { isFetching, ...rest } = this.props;
 
     if (isFetching) {
-      return <p>loading...</p>;
+      return <Loader />;
     }
 
     return (
