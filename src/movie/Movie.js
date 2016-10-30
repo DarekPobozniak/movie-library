@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { hashHistory } from 'react-router';
 import { fetchMovie } from './actions';
+import SearchForm from '../searchForm/SearchForm';
 import MovieItem from './MovieItem';
 import Loader from '../loader/Loader';
+import Message from '../message/Message';
 
 class Movie extends Component {
   static propTypes = {
@@ -11,6 +14,10 @@ class Movie extends Component {
     params: PropTypes.shape({
       id: PropTypes.string.isRequired,
     }).isRequired,
+  }
+
+  state = {
+    fetchingError: false,
   }
 
   componentDidMount() {
@@ -23,16 +30,31 @@ class Movie extends Component {
       .catch(() => this.setState({ fetchingError: true }));
   }
 
+  handleSearchFormSubmit = (searchQuery) => {
+    hashHistory.replace(`/movies/${encodeURIComponent(searchQuery)}`);
+  }
+
   render() {
     const { isFetching, ...rest } = this.props;
+    const { fetchingError } = this.state;
 
-    if (isFetching) {
+    if (isFetching && !fetchingError) {
       return <Loader />;
     }
 
     return (
       <div className="wrapper">
-        <MovieItem {...rest} />
+        <SearchForm
+          onSubmit={this.handleSearchFormSubmit}
+        />
+
+        {fetchingError &&
+          <Message type="alert">We couldn&apos;t find movie you were looking for :(</Message>
+        }
+
+        {!fetchingError &&
+          <MovieItem {...rest} />
+        }
       </div>
     );
   }

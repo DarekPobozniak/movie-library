@@ -7,6 +7,7 @@ import SearchForm from '../searchForm/SearchForm';
 import MovieListItem from './MovieListItem';
 import Pagination from '../pagination/Pagination';
 import Loader from '../loader/Loader';
+import Message from '../message/Message';
 
 import './_styles.scss';
 
@@ -16,6 +17,7 @@ class MovieList extends Component {
     isFetching: PropTypes.bool.isRequired,
     movies: PropTypes.arrayOf(React.PropTypes.shape),
     totalPages: PropTypes.number.isRequired,
+    totalResults: PropTypes.number,
     params: PropTypes.shape(),
   }
 
@@ -50,7 +52,7 @@ class MovieList extends Component {
   }
 
   render() {
-    const { isFetching, movies, totalPages } = this.props;
+    const { isFetching, movies, totalPages, totalResults } = this.props;
 
     return (
       <div className="wrapper">
@@ -63,7 +65,11 @@ class MovieList extends Component {
         }
 
         {!isFetching && movies.length === 0 &&
-          <p>Use the search to find movie you like</p>
+          <Message>Use the search to find a movie you like</Message>
+        }
+
+        {!isFetching && totalResults === 0 &&
+          <Message type="alert">We couldn&apos;t find a movie you were looking for :(</Message>
         }
 
         {!isFetching && movies.length > 0 &&
@@ -95,6 +101,7 @@ const mapStateToProps = state => (
   {
     movies: state.movies.items.results || [],
     totalPages: state.movies.items.total_pages || 0,
+    totalResults: state.movies.items.total_results,
     isFetching: state.movies.isFetching,
   }
 );
