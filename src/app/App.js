@@ -4,6 +4,9 @@ import Footer from '../footer/Footer';
 
 import './_styles.scss';
 
+/**
+ * Application component
+ */
 const App = ({ children }) => (
   <div className="page-wrapper">
     <Header />
@@ -14,6 +17,10 @@ const App = ({ children }) => (
   </div>
 );
 
+/**
+ * propTypes
+ * @property {ReactElement} children to be rendered
+ */
 App.propTypes = {
   children: PropTypes.element.isRequired,
 };

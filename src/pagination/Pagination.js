@@ -5,6 +5,9 @@ import PaginationItem from './PaginationItem';
 
 import './_styles.scss';
 
+/**
+ * Pagination component
+ */
 export class Pagination extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
@@ -13,6 +16,10 @@ export class Pagination extends Component {
     activePage: PropTypes.number.isRequired,
   }
 
+  /**
+   * Handles click on pagination element
+   * @param  {Number} pageNo - Numbe of a page that was clicked
+   */
   handleOnClick = (pageNo) => {
     const { dispatch, onPageChange } = this.props;
 
@@ -20,6 +27,10 @@ export class Pagination extends Component {
     onPageChange(pageNo);
   }
 
+  /**
+   * Renders pagination elements
+   * @return {ReactElement} markup
+   */
   renderLinks = () => {
     const { totalPages, activePage } = this.props;
 
@@ -33,6 +44,10 @@ export class Pagination extends Component {
     );
   }
 
+  /**
+   * render
+   * @return {ReactElement} markup
+   */
   render() {
     return (
       <p className="pagination">{this.renderLinks()}</p>

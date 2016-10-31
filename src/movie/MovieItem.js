@@ -1,5 +1,19 @@
 import React, { PropTypes } from 'react';
 
+/**
+ * MovieItem component
+ * @param {Object} param - Movie params
+ * @param {String} param.title - Movie title
+ * @param {Number} param.vote_average - Movie average vote
+ * @param {String} param.overview - Movie overview
+ * @param {String} param.imagePath - Movie image path
+ * @param {Number} param.releaseDate - Movie release year
+ * @param {String} param.duration - Movie duration
+ * @param {String} param.status - Movie status
+ * @param {String} param.income - Movie income
+ * @param {Array}  param.genres - Movie genres
+ * @return {String} markup
+ */
 const MovieItem = ({
   title, vote_average, overview, imagePath, releaseDate, duration, status, income, genres,
 }) => (

@@ -1,6 +1,15 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
+/**
+ * Movie List Item component
+ * @param  {Number} options.id          - Movie ID
+ * @param  {String} options.title       - Movie title
+ * @param  {Number} options.voteAverage - Movie average vote
+ * @param  {String} options.overview    - Movie overview
+ * @param  {String} options.poster      - Movie poster path
+ * @return {ReactElement} markup
+ */
 const MovieListItem = ({
   id, title, voteAverage, overview, poster,
 }) => {

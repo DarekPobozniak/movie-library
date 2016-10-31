@@ -3,6 +3,9 @@ import { Link } from 'react-router';
 
 import './_styles.scss';
 
+/**
+ * Header component
+ */
 const Header = () => (
   <header className="page-header">
     <div className="wrapper">

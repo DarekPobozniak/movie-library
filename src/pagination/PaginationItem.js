@@ -1,5 +1,12 @@
 import React, { PropTypes } from 'react';
 
+/**
+ * Pagination Item component
+ * @param  {Number}   options.activePage - Active page number
+ * @param  {Number}   options.pageNo     - Number of a currently rendered item
+ * @param  {Function} options.onClick    - Function to be called after item click
+ * @return {ReactElement} markup
+ */
 const PaginationItem = ({ activePage, pageNo, onClick }) => {
   const handleClick = () => {
     onClick(pageNo);

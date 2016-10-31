@@ -9,7 +9,14 @@ import Message from '../message/Message';
 
 import './_styles.scss';
 
+/**
+ * Movie component
+ */
 export class Movie extends Component {
+  /**
+   * propTypes
+   * @property {function} dispatch - path URL path
+   */
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
@@ -18,10 +25,18 @@ export class Movie extends Component {
     }).isRequired,
   }
 
+  /**
+   * state
+   * @type {Object}
+   * @property {boolean} fetchingError - true if it's impossible to fetch data
+   */
   state = {
     fetchingError: false,
   }
 
+  /**
+   * componentDidMount
+   */
   componentDidMount() {
     const { dispatch, params: { id } } = this.props;
 
@@ -32,10 +47,18 @@ export class Movie extends Component {
       .catch(() => this.setState({ fetchingError: true }));
   }
 
+  /**
+   * Handle action after search form submit
+   * @param  {string} searchQuery - search input's query
+   */
   handleSearchFormSubmit = (searchQuery) => {
     hashHistory.replace(`/movies/${encodeURIComponent(searchQuery)}`);
   }
 
+  /**
+   * render
+   * @return {ReactElement} markup
+   */
   render() {
     const { isFetching, ...rest } = this.props;
     const { fetchingError } = this.state;

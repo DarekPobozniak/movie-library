@@ -47,6 +47,12 @@ npm run lint
 npm run test
 ```
 
+### Documentation
+
+```
+npm run doc
+```
+
 ## Production
 
 ```

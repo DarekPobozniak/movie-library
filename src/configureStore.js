@@ -1,17 +1,16 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
-// import { hashHistory } from 'react-router';
-// import { routerMiddleware } from 'react-router-redux';
 import reducer from './reducers';
 
+/**
+ * Configure Store
+ * @return {Object} - The whole state tree the your application
+ */
 const configureStore = () => {
   const loggerMiddleware = createLogger({
     predicate: () => process.env.NODE_ENV === 'development',
   });
-
-  // const history = hashHistory; // browserHistory
-  // const reduxRouterMiddleware = routerMiddleware(history);
 
   const store = applyMiddleware(
     thunkMiddleware, // lets us dispatch() functions

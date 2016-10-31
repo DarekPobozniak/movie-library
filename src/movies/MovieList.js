@@ -11,6 +11,9 @@ import Message from '../message/Message';
 
 import './_styles.scss';
 
+/**
+ * MovieList component
+ */
 class MovieList extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
