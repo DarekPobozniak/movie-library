@@ -5,6 +5,11 @@ import './_styles.scss';
 class SearchForm extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+  }
+
+  static defaultProps = {
+    placeholder: 'movie title, keyword...',
   }
 
   state = {
@@ -28,6 +33,8 @@ class SearchForm extends Component {
   }
 
   render() {
+    const { placeholder } = this.props;
+
     return (
       <form className="search-form" onSubmit={this.handleSubmit}>
         <label htmlFor="search-input"className="search-form__label">Search movie</label>
@@ -38,7 +45,7 @@ class SearchForm extends Component {
             id="search-input"
             onChange={this.handleValueChange}
             value={this.state.inputValue}
-            placeholder="movie title, keyword..."
+            placeholder={placeholder}
             required
           />
           <button type="submit" className="button search-form__button">Search</button>
