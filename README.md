@@ -37,6 +37,8 @@ Once run, open <http://localhost:8765/>
 
 ### Linting
 
+using ESLint
+
 ```
 npm run lint
 ```
@@ -49,9 +51,13 @@ npm run test
 
 ### Documentation
 
+using ESDoc
+
 ```
 npm run doc
 ```
+
+You can see the documentation at movie-library/dist/esdoc/index.html
 
 ## Production
 
