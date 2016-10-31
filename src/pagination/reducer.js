@@ -5,9 +5,10 @@ export default (state = {
 }, action) => {
   switch (action.type) {
     case SET_ACTIVE_PAGE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         activePage: action.page,
-      });
+      };
     default:
       return state;
   }

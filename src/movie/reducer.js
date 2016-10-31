@@ -12,27 +12,31 @@ export default (state = {
 }, action) => {
   switch (action.type) {
     case REQUEST_MOVIES:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: true,
-      });
+      };
     case RECEIVE_MOVIES:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: false,
         items: action.items,
-      });
+      };
     case REQUEST_MOVIE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         selected: {
           isFetching: true,
         },
-      });
+      };
     case RECEIVE_MOVIE:
-      return Object.assign({}, state, {
-        selected: Object.assign({}, action.item, {
+      return {
+        ...state,
+        selected: {
+          ...action.item,
           isFetching: false,
-          fetched: true,
-        }),
-      });
+        },
+      };
     default:
       return state;
   }
