@@ -2,8 +2,12 @@
 A UI to search the Movie DB
 
 ## Features
-* Search The Movie Database using their TMDb API
+* Search The Movie Database using TMDb API
+* Pagination of search results
 * Display details of selected movie
+* Fully responsive (can be browsed on mobile devices)
+* Share searched movie or movies list url by copying from the browser url bar
+* After pasting url in the browser, go directy to search results or movie details
 
 ## Local Installation
 
@@ -35,6 +39,12 @@ Once run, open <http://localhost:8765/>
 
 ```
 npm run lint
+```
+
+### Testing
+
+```
+npm run test
 ```
 
 ## Production
