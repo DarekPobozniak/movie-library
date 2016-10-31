@@ -5,7 +5,7 @@ import PaginationItem from './PaginationItem';
 
 import './_styles.scss';
 
-class Pagination extends Component {
+export class Pagination extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     onPageChange: PropTypes.func.isRequired,

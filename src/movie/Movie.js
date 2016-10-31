@@ -9,7 +9,7 @@ import Message from '../message/Message';
 
 import './_styles.scss';
 
-class Movie extends Component {
+export class Movie extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     isFetching: PropTypes.bool.isRequired,
