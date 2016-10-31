@@ -7,6 +7,8 @@ import MovieItem from './MovieItem';
 import Loader from '../loader/Loader';
 import Message from '../message/Message';
 
+import './_styles.scss';
+
 class Movie extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
@@ -67,13 +69,12 @@ const mapStateToProps = (state) => {
     overview,
     poster_path,
     vote_average,
-    isFetching,
     release_date,
     runtime,
     status,
     revenue,
     genres,
-  } = state.movies.selected;
+  } = state.movie.item;
 
   const imagePath = poster_path ? `https://image.tmdb.org/t/p/w300_and_h450_bestv2${poster_path}` : null;
   const releaseDate = release_date ? new Date(release_date).getFullYear() : null;
@@ -86,12 +87,12 @@ const mapStateToProps = (state) => {
     overview,
     imagePath,
     vote_average,
-    isFetching,
     releaseDate,
     duration,
     status,
     income,
     genres,
+    isFetching: state.movie.isFetching,
   };
 };
 

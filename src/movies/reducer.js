@@ -1,22 +1,22 @@
 import {
-  REQUEST_MOVIE, RECEIVE_MOVIE,
+  REQUEST_MOVIES, RECEIVE_MOVIES,
 } from './actions';
 
 export default (state = {
   isFetching: false,
-  item: {},
+  items: [],
 }, action) => {
   switch (action.type) {
-    case REQUEST_MOVIE:
+    case REQUEST_MOVIES:
       return {
         ...state,
         isFetching: true,
       };
-    case RECEIVE_MOVIE:
+    case RECEIVE_MOVIES:
       return {
         ...state,
-        item: action.item,
         isFetching: false,
+        items: action.items,
       };
     default:
       return state;

@@ -1,49 +1,3 @@
-.movie-list {
-  display: flex;
-  flex-wrap: wrap;
-
-  &__item {
-    border: 1px solid #acbac9;
-    border-width: 0 0 1px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1em;
-    width: 100%;
-
-    &__content {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      order: 2;
-      padding: 1em;
-    }
-
-    &__header {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &__title {
-      margin: 0;
-      flex: 1;
-    }
-
-    &__vote {
-      margin-left: .4em;
-    }
-
-    &__description {
-      flex: 1;
-      overflow: hidden;
-    }
-
-    &__image {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-}
-
 .movie {
   display: flex;
   flex-direction: column;
@@ -106,33 +60,6 @@
 }
 
 @media only screen and (min-width: 735px) {
-  .movie-list {
-    justify-content: space-between;
-
-    &__item {
-      border-width: 1px;
-      box-sizing: border-box;
-      flex-direction: row;
-      height: 278px;
-      overflow: hidden;
-
-      &__content {
-        overflow: hidden;
-      }
-
-      &__title {
-        min-width: 0;
-        white-space: nowrap;
-
-        a {
-          display: block;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      }
-    }
-  }
-
   .movie {
     flex-direction: row;
 
@@ -142,17 +69,7 @@
   }
 }
 
-@media only screen and (min-width: 850px) {
-  .movie-list__item {
-    width: calc(50% - .5em);
-  }
-}
-
 @media only screen and (min-width: 1180px) {
-  .movie-list__item {
-    width: calc(100% / 3 - .75em);
-  }
-
   .movie {
     &__content {
       flex: 1;
