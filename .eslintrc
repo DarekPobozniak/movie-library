@@ -1,8 +1,12 @@
 {
   "extends": "airbnb",
+  "globals": {
+    "documentRef": true,
+  },
   "rules": {
     "camelcase": 0,
     "import/prefer-default-export": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": [error, { devDependencies: true }]
   }
 }
